@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% comment %} <link rel="stylesheet" href="task.css"> {% endcomment %}
+    <style>
+        *{
+    box-sizing: border-box;
+}
+
+.day_header{
+    background-color: lightgray;
+    padding: 50px;
+    font-size: 40px;
+}
+.DB_style{
+    float: left;
+    padding: 10px;
+    width: 49%;
+    background-color: #f1f1f1;
+    height: 550px;
+    max-width: 100%;
+}
+
+.map_style{
+    float: right;
+    padding: 10px;
+    width: 49%;
+    background-color: #f1f1f1;
+    height: 550px;
+    max-width: 100%;
+}
+
+.date_time{
+    font-size: 30px;
+    left: 33%;
+    position: relative;
+}
+/* @media (orientation: portrait) */
+@media screen and (max-width:1000px) and (min-height:500px){
+    .map_style{
+        height: 300px;
+        background-color: gold;
+        width: 49%;
+        padding: 50px;
+    }
+    .DB_style{
+        height: 300px;
+        background-color: gold;
+        width: 49%;
+        padding: 50px;
+    }
+    .day_header{
+        background-color: gold;
+        padding: 30px;
+        font-size: 20px;
+    }
+    .date_time{
+        font-size: 20px;
+        left: 15%;
+        position: relative;
+    }
+}
+/* @media (min-height:400px) and (max-width:1000px){
+    .map_style{
+        height: 300px;
+        background-color: green;
+        width: 49%;
+        padding: 50px;
+    }
+    .day_header{
+        background-color: green;
+        padding: 30px;
+        font-size: 20px;
+    }
+    .date_time{
+        font-size: 20px;
+        left: 15%;
+        position: relative;
+    }
+} */
+    </style>
+</head>
+<body>
+    <article class="day_header">
+        <div>
+            <form action="http://127.0.0.1:8000/">
+                <div class="date_time">
+                원하는 날짜와 시간을 선택하세요 
+                </div>
+                <input id='date' type = "date" class="date_time">
+                <input id='time' type = "time" class="date_time">
+                {% comment %} <input type="time" clas="date_time" value="검색"> {% endcomment %}
+
+                <!-- <input type="submit" style="font-size: 30px;" value="검색"> -->
+                <!-- <label for="time"></label> -->
+                {% comment %} <select name="time" id="time" class="date_time">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                </select> {% endcomment %}
+                <input type="submit" class="date_time" value="검색">
+            </form>
+        </div>
+    </article>
+
+    <article class="DB_style">
+        {{html.0|safe}}
+    </article>
+        
+    <article class="map_style">
+        {{map|safe}}
+    </article>
+</body>
+</html>
+
+

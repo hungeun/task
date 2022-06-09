@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+.day_header{
+    background-color: lightgray;
+    padding: 10px;
+    font-size: 15px;
+}
+.DB_style{
+    float: left;
+    padding: 20px;
+    width: 49%;
+    background-color: #f1f1f1;
+    height: 600px;
+}
+
+.map_style{
+    float: right;
+    padding: 20px;
+    width: 49%;
+    background-color: #f1f1f1;
+    height: 600px;
+}
